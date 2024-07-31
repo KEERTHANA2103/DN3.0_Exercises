@@ -1,0 +1,33 @@
+1. Understand Linked Lists:
+	Q. Explain the different types of linked lists (Singly Linked List, Doubly Linked List).
+	  Singly Linked List:
+	  Description: A linear collection of nodes where each node contains data and a reference (or link) to the next node in the sequence.
+	  Advantages:
+		Dynamic size.
+		Efficient insertions and deletions.
+	  Disadvantages:
+		No efficient access to elements by index.
+		Extra memory for storing references.
+
+	  Doubly Linked List:
+	  Description: Each node contains data and two references: one to the next node and one to the previous node.
+	  Advantages:
+		Allows traversal in both directions.
+		Efficient insertions and deletions.
+	  Disadvantages:
+		Requires more memory for storing two references.
+		No efficient access to elements by index.
+
+
+4. Analysis:
+	Q. Analyze the time complexity of each operation.
+	  Time Complexity:
+	  Add Operation: O(n), traverse to the end to add a new task.
+	  Search Operation: O(n), linear search through the linked list.
+	  Traverse Operation: O(n), iterate through all nodes.
+	  Delete Operation: O(n), find the task and adjust pointers.
+	
+	Q. Discuss the advantages of linked lists over arrays for dynamic data .
+	   Dynamic Size: Linked lists can grow and shrink dynamically without the need to declare a fixed size.
+	   Efficient Insertions/Deletions: Adding or removing elements does not require shifting elements, making these operations faster in some cases.
+	   Memory Usage: No need for a contiguous block of memory, which can be beneficial for memory utilization.

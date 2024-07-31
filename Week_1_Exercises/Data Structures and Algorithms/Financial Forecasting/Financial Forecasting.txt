@@ -1,0 +1,17 @@
+1. Understand Recursive Algorithms:
+	Q. Explain the concept of recursion and how it can simplify certain problems.
+	   Concept of Recursion:
+	   Recursion is a method where a function calls itself to solve smaller instances of the same problem.
+	   It can simplify problems by breaking them down into more   	 	   manageable subproblems.
+           Example: Calculating the factorial of a number (n!) can be done recursively as n! = n * (n-1)!.
+
+4. Analysis:
+	Q. Discuss the time complexity of your recursive algorithm.
+	   The time complexity of the recursive algorithm is O(n), where n is the number of years to forecast. Each recursive call reduces the problem size by one, resulting in n calls.
+
+	Q. Explain how to optimize the recursive solution to avoid excessive computation.
+	   Optimizing Recursive Solutions:
+		Memoization: Store the results of previously computed values to avoid redundant calculations. This technique saves computation time by reusing already computed results.
+		Iterative Approach: Convert the recursive solution to an iterative one. Iterative solutions typically use loops instead of function calls, reducing the overhead associated 		with recursion.
+
+

@@ -1,0 +1,24 @@
+1. Understand Search Algorithms:
+	Q. Explain linear search and binary search algorithms.
+	   Linear Search:
+           	Scans each element of the list one by one until the desired element is found or the list ends.
+                Time Complexity: O(n), where n is the number of elements in the list.
+
+           Binary Search:
+		Efficiently finds an element by repeatedly dividing the search interval in half. It requires the list to be sorted.
+		Time Complexity: O(log n), where n is the number of elements in the list.
+
+4. Analysis:
+	Q. Compare the time complexity of linear and binary search.
+	   Time Complexity:
+	   	Linear Search: O(n), It scans each element in the list one by one.
+           	Binary Search: O(log n) , It repeatedly divides the search interval in half, requiring a sorted list.
+
+	Q. Discuss when to use each algorithm based on the data set size and order.
+	   Linear Search:
+		Use it for small datasets.
+		Suitable when the list is unsorted or changes frequently, making sorting impractical.
+	   Binary Search:
+		Use it for larger datasets.
+		Requires the list to be sorted, but provides much faster search times once sorted.
+	   By choosing the appropriate search algorithm based on the dataset size and order, you can optimize search performance in your library management system.

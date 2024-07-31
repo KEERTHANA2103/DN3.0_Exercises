@@ -1,0 +1,35 @@
+1.Understand Sorting Algorithms:
+	Q. Explain different sorting algorithms (Bubble Sort, Insertion Sort, Quick Sort, Merge Sort).
+	   Bubble Sort: This algorithm repeatedly steps through the list, compares adjacent items, and swaps them if they are in the wrong order. It continues to do this until the list is 	   sorted.
+
+	   Insertion Sort: This algorithm builds the final sorted list one item at a time. It picks each item from the input data and finds the location it belongs in the sorted list, then   	   inserts it there.
+
+	   Quick Sort: This algorithm picks an element as a pivot and partitions the other elements into two sub-arrays, according to whether they are less than or greater than the pivot. It 	   then recursively applies the same logic to the sub-arrays.
+
+	   Merge Sort: This algorithm divides the list into two halves, recursively sorts each half, and then merges the two sorted halves back together.
+
+4. Analysis: 
+	Q. Compare the performance (time complexity) of Bubble Sort and Quick Sort.
+	   Time Complexity:
+	   Bubble Sort:
+		Best Case: O(n), when the list is already sorted.
+		Average Case: O(n²)
+		Worst Case: O(n²), when the list is sorted in reverse order.
+
+	   Quick Sort:
+		Best Case: O(n log n)
+		Average Case: O(n log n)
+		Worst Case: O(n²), when the pivot is the smallest or largest element each time.
+
+	Q. Discuss why Quick Sort is generally preferred over Bubble Sort.
+	   Quick Sort is often used instead of Bubble Sort because it's much faster with large lists. 
+	   On average, Quick Sort sorts data in O(n log n) time, which is much quicker than Bubble Sort's O(n²) time. 
+	   Even though Quick Sort might sometimes take as long as O(n²) in the worst-case scenario, this can be improved by choosing good pivots or using a random approach. 
+	   Overall, Quick Sort usually works much better than Bubble Sort for most real-world problems.
+
+
+
+
+
+
+

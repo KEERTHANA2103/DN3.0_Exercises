@@ -1,0 +1,25 @@
+1. Understand Array Representation:
+	Q. Explain how arrays are represented in memory and their advantages.
+	   Memory Layout: Arrays keep all their elements next to each other in memory. Each element is the same size, and you can access any element instantly by using its position (index).
+	   Benefits:
+		Quick Access: You can directly get any element using its index, which is very fast (constant time, O(1)).
+		Easy to Use: Arrays are straightforward to set up and work with.
+		Predictable Memory Use: The size of an array is set when you create it, so you know exactly how much memory it will use.
+
+4. Analysis:
+	Q. Analyze the time complexity of each operation (add, search, traverse, delete).
+	   Time Complexity:
+		Add Operation: O(1), if there is space in the array; otherwise, adding beyond capacity is not allowed.
+		Search Operation: O(n), linear search through the array.
+		Traverse Operation: O(n), iterating through all elements.
+		Delete Operation: O(n), finding the element and shifting the rest of the elements to fill the gap.
+
+	Q. Discuss the limitations of arrays and when to use them.
+	   Limitations of Array:
+		Fixed Size: Once the size of the array is defined, it cannot be changed, which might lead to wasted space or insufficient space.
+		Insertions and Deletions: Adding or removing elements requires shifting elements, which can be inefficient for large arrays.
+
+	   When to Use Arrays:
+		When the number of elements is known and fixed.
+		When you need fast access to elements by index.
+		When the overhead of more complex data structures is not justified.

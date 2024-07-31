@@ -1,0 +1,26 @@
+1. Understand the Problem:
+	Q. Explain why data structures and algorithms are essential in handling large inventories.
+	   Data Structures and Algorithms are essential in handling large inventories due to several reasons. They are:
+	   Performance: Efficient and proper data structures and algorithms ensure quick access, modification, and storage of inventory data, which is essential for real-time applications.
+	   Speed: Algorithms help in performing operations like searching, sorting, inserting, and deleting efficiently. This is vital in an inventory system where operations need to be performed rapidly.
+           Memory Management: Efficient use of memory helps in reducing costs and ensuring that the system can handle large datasets.
+           Scalability: They ensure the system can handle growing amounts of data without slowing down.
+	   
+	Q. Discuss the types of data structures suitable for this problem.
+           The type of data structures suitable for this problem are:
+	   ArrayList: Suitable for dynamic arrays where elements can be accessed quickly via indices. However, it may not be optimal for frequent insertions and deletions.
+	   HashMap: Provides fast access, insertion, and deletion operations (average-case O(1) time complexity). It's suitable for cases where quick lookup by key (e.g., productId) is required.
+	   LinkedList: Useful for efficient insertion and deletion, but has O(n) complexity for searching.
+
+4. Analysis:
+	Q. Analyze the time complexity of each operation (add, update, delete) in your chosen data structure.
+	   Time Complexity of each operation:
+	   Add Product: O(1) ,inserting into HashMap.
+           Update Product: O(1), updating an existing entry in a HashMap.
+	   Delete Product: O(1), removing an entry from a HashMap.
+	
+	Q. Discuss how you can optimize these operations.
+	   Rehashing: To minimize the impact of rehashing, choose an initial capacity and load factor that suit the expected size of the inventory.
+	   Concurrency: For a multi-threaded environment, consider using ConcurrentHashMap to handle concurrent access and modification efficiently.
+	   Bulk Operations: For operations involving multiple products, consider batch processing to minimize the overhead of repeated operations.
+
