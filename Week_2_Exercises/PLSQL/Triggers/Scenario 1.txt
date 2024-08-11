@@ -1,0 +1,9 @@
+Scenario 1: Automatically Update the Last Modified Date When a Customer's Record Is Updated
+
+CREATE OR REPLACE TRIGGER UpdateCustomerLastModified
+BEFORE UPDATE ON Customers
+FOR EACH ROW
+BEGIN
+  :NEW.LastModified := SYSDATE;
+END;
+/

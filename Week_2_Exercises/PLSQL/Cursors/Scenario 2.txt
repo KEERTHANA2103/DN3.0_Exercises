@@ -1,0 +1,26 @@
+Scenario 2: Apply Annual Fee to All Accounts
+PL/SQL Block Using an Explicit Cursor ApplyAnnualFee
+
+DECLARE
+  CURSOR cur_apply_fee IS
+    SELECT AccountID, Balance
+    FROM Accounts;
+  
+  v_accountID Accounts.AccountID%TYPE;
+  v_balance Accounts.Balance%TYPE;
+  v_fee CONSTANT NUMBER := 100; -- Annual maintenance fee
+BEGIN
+  OPEN cur_apply_fee;
+  LOOP
+    FETCH cur_apply_fee INTO v_accountID, v_balance;
+    EXIT WHEN cur_apply_fee%NOTFOUND;
+    -- Deduct the fee
+    UPDATE Accounts
+    SET Balance = v_balance - v_fee,
+        LastModified = SYSDATE
+    WHERE AccountID = v_accountID;
+  END LOOP;
+  CLOSE cur_apply_fee;
+  COMMIT;
+END;
+/

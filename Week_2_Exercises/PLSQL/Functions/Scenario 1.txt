@@ -1,0 +1,11 @@
+Scenario 1: Calculate the Age of Customers for Eligibility Checks
+
+CREATE OR REPLACE FUNCTION CalculateAge (
+  p_dob DATE
+) RETURN NUMBER IS
+  v_age NUMBER;
+BEGIN
+  SELECT TRUNC(MONTHS_BETWEEN(SYSDATE, p_dob) / 12) INTO v_age FROM DUAL;
+  RETURN v_age;
+END CalculateAge;
+/

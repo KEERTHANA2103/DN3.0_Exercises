@@ -1,0 +1,25 @@
+Scenario 3: Update the Interest Rate for All Loans Based on a New Policy
+PL/SQL Block Using an Explicit Cursor UpdateLoanInterestRates
+
+DECLARE
+  CURSOR cur_update_interest IS
+    SELECT LoanID, InterestRate
+    FROM Loans;
+  
+  v_loanID Loans.LoanID%TYPE;
+  v_interestRate Loans.InterestRate%TYPE;
+  v_newInterestRate CONSTANT NUMBER := 7.5; -- New interest rate
+BEGIN
+  OPEN cur_update_interest;
+  LOOP
+    FETCH cur_update_interest INTO v_loanID, v_interestRate;
+    EXIT WHEN cur_update_interest%NOTFOUND;
+    -- Update the interest rate
+    UPDATE Loans
+    SET InterestRate = v_newInterestRate
+    WHERE LoanID = v_loanID;
+  END LOOP;
+  CLOSE cur_update_interest;
+  COMMIT;
+END;
+/

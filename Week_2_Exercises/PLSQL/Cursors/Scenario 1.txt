@@ -1,0 +1,28 @@
+Scenario 1: Generate Monthly Statements for All Customers
+PL/SQL Block Using an Explicit Cursor GenerateMonthlyStatements
+
+DECLARE
+  CURSOR cur_monthly_statements IS
+    SELECT c.CustomerID, c.Name, t.TransactionID, t.TransactionDate, t.Amount, t.TransactionType
+    FROM Customers c
+    JOIN Accounts a ON c.CustomerID = a.CustomerID
+    JOIN Transactions t ON a.AccountID = t.AccountID
+    WHERE t.TransactionDate BETWEEN TRUNC(SYSDATE, 'MM') AND LAST_DAY(SYSDATE);
+  
+  v_customerID Customers.CustomerID%TYPE;
+  v_name Customers.Name%TYPE;
+  v_transactionID Transactions.TransactionID%TYPE;
+  v_transactionDate Transactions.TransactionDate%TYPE;
+  v_amount Transactions.Amount%TYPE;
+  v_transactionType Transactions.TransactionType%TYPE;
+BEGIN
+  OPEN cur_monthly_statements;
+  LOOP
+    FETCH cur_monthly_statements INTO v_customerID, v_name, v_transactionID, v_transactionDate, v_amount, v_transactionType;
+    EXIT WHEN cur_monthly_statements%NOTFOUND;
+    DBMS_OUTPUT.PUT_LINE('Customer ID: ' || v_customerID || ', Name: ' || v_name || ', Transaction ID: ' || v_transactionID ||
+                         ', Date: ' || TO_CHAR(v_transactionDate, 'YYYY-MM-DD') || ', Amount: ' || v_amount || ', Type: ' || v_transactionType);
+  END LOOP;
+  CLOSE cur_monthly_statements;
+END;
+/

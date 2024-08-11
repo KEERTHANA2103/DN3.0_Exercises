@@ -1,0 +1,35 @@
+Scenario 1: Apply a discount to loan interest rates for customers above 60 years old
+
+DECLARE
+  CURSOR cur_customers IS
+    SELECT c.CustomerID, l.LoanID, l.InterestRate, c.DOB
+    FROM Customers c
+    JOIN Loans l ON c.CustomerID = l.CustomerID;
+  
+  v_customer_id Customers.CustomerID%TYPE;
+  v_loan_id Loans.LoanID%TYPE;
+  v_interest_rate Loans.InterestRate%TYPE;
+  v_dob Customers.DOB%TYPE;
+  v_age NUMBER;
+  
+BEGIN
+  OPEN cur_customers;
+  
+  LOOP
+    FETCH cur_customers INTO v_customer_id, v_loan_id, v_interest_rate, v_dob;
+    EXIT WHEN cur_customers%NOTFOUND;
+    
+    v_age := TRUNC((SYSDATE - v_dob) / 365.25);
+    
+    IF v_age > 60 THEN
+      UPDATE Loans
+      SET InterestRate = v_interest_rate - 1
+      WHERE LoanID = v_loan_id;
+    END IF;
+  END LOOP;
+  
+  CLOSE cur_customers;
+  
+  COMMIT;
+END;
+/
